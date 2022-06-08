@@ -1,0 +1,88 @@
+/*getting css referece from ghostSVGplay.html from John Keating*/
+.myDisplayBox {
+    border: 1px solid black;
+    font-family: "Lucida Console", "Courier New", monospace;
+    color: white;
+    height: 490px;
+    width: 420px;
+    background-color: grey;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+    overflow: scroll;
+}
+
+.mySVGBox {
+    height: 490px;
+    width: 420px;
+    background-color: grey;
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.myControlsBox {
+    height: 490px;
+    width: 420px;
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+#myDisplayBoxTitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 16pt;
+    text-align: center;
+    color: black;
+    margin: 10 auto;
+}
+
+svg,
+object {
+    border: 1px solid grey;
+    display: block;
+    margin: auto;
+    }
+
+#ghost{
+   position: relative;
+}
+
+.column {
+    float: left;
+    margin: 30px;
+}
+
+.left,
+.right,
+.middle {
+    width: 440px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.button {
+    border: none;
+    border-radius: 12px;
+    color: rgb(5, 4, 4);
+    padding: 13px 44px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+
+.butLightGrey {
+    background-color: #e5e7e7e8;
+}
