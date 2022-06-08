@@ -1,0 +1,65 @@
+/*the reference of the css_style code comes from https://www.youtube.com/watch?v=uPBxzvSGIiA */
+.wrapper {
+    text-align: center;
+}
+.button {
+        padding:16px 32px;
+        font-family:helvetica;
+        font-size:16px;
+        font-weight:100;
+        color:#fff;
+        background: #587286;
+        border:0;
+        font-weight:100;
+      
+}
+table {
+    border: solid 2px #000;
+    border-collapse: collapse;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
+table, th, td {
+    
+    font-family: sans-serif;
+}
+
+tr:nth-child(even) {
+    background-color: lightgrey;
+}
+
+tr:nth-child(odd) {
+    background-color: rgba(128, 128, 128, 0.51);
+}
+
+th {
+    border: solid 1px #000;
+    border-collapse: collapse;
+    padding: 8px 4px;
+    background-color:rgb(136, 136, 136);
+    font: 14px Verdana;
+    color: black;
+    font-weight: bold;
+}
+td {
+    border: solid 1px #000;
+    border-collapse: collapse;
+    padding: 8px 4px;
+    font: 14px Verdana;
+    color: black;
+}
+h3 {
+    text-align: center;
+}
+
+.withoutGrade {background-color:yellow;}
+.lower60 { background-color:red; color:white; text-align: right;}
+
+.tdNumAlign {
+    text-align: right;
+}
+
+.td_Align{
+    text-align: center;
+}

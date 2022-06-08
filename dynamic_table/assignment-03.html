@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Grades</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="assignment-03.css">
+    
+</head>
+<body>
+    <script type="text/javascript" src="assignment-03.js"></script>
+    <table id="table">
+        <tr>
+            <th id="studentName">Student Name</th>
+            <th id="studentID">Student ID</th>
+            <th id="as1">Assignment 1</th> 
+            <th id="as2">Assignment 2</th>
+            <th id="as3">Assignment 3</th>
+            <th id="as4">Assignment 4</th>
+            <th id="as5">Assignment 5</th>
+            <th id="finalgrade"onclick="switchcolumn()"><h3>Average [%]</h3></th>
+        </tr>
+
+    </table>
+    
+    <div class="wrapper">
+        <div id="assignmentsSub"></div>
+        <button class="button" id="addRow" onclick="addRow()">Add Row</button>
+        <button class="button" onclick="addColumn()">Add Column</button>
+        <button class="button" onclick="deleterow()">deleterow</button>
+        <button class="button" onclick="resettable()">Reset</button>
+    </div>
+    
+        
+   
+    <script>
+        //*here I generate table using a static Json array *//
+      var students = [
+    {
+        "Student_Name": "Martina Griffin",
+        "Student_ID": "951868763",
+        "Assignment_1": "-",
+        "Assignment_2": "-",
+        "Assignment_3": "-",
+        "Assignment_4": "-",
+        "Assignment_5": "-"    
+        },
+        {
+            "Student_Name": "Charlotte Whelan",
+            "Student_ID": "772138867",
+            "Assignment_1": "-",
+            "Assignment_2": "-",
+            "Assignment_3": "-",
+            "Assignment_4": "-",
+            "Assignment_5": "-"    
+        },
+        {
+            "Student_Name": "Sylvie Maguire",
+            "Student_ID": "091660463",
+            "Assignment_1": "-",
+            "Assignment_2": "-",
+            "Assignment_3": "-",
+            "Assignment_4": "-",
+            "Assignment_5": "-"    
+        },
+        {
+            "Student_Name": "Romi Brady",
+            "Student_ID": "767385373",
+            "Assignment_1": "-",
+            "Assignment_2": "-",
+            "Assignment_3": "-",
+            "Assignment_4": "-",
+            "Assignment_5": "-"    
+        },
+        {
+            "Student_Name": "Renée Moloney",
+            "Student_ID": "959981203",
+            "Assignment_1": "-",
+            "Assignment_2": "-",
+            "Assignment_3": "-",
+            "Assignment_4": "-",
+            "Assignment_5": "-"    
+        },
+        {
+            "Student_Name": "Teegan Doherty",
+            "Student_ID": "311571745",
+            "Assignment_1": "-",
+            "Assignment_2": "-",
+            "Assignment_3": "-",
+            "Assignment_4": "-",
+            "Assignment_5": "-"    
+        },
+        {
+            "Student_Name": "Kenzi McDermott",
+            "Student_ID": "478480216",
+            "Assignment_1": "-",
+            "Assignment_2": "-",
+            "Assignment_3": "-",
+            "Assignment_4": "-",
+            "Assignment_5": "-"    
+        },
+        {
+            "Student_Name": "Adeline Dwyer",
+            "Student_ID": "949391964",
+            "Assignment_1": "-",
+            "Assignment_2": "-",
+            "Assignment_3": "-",
+            "Assignment_4": "-",
+            "Assignment_5": "-"    
+        },
+        {
+            "Student_Name": "Heidi Mahony",
+            "Student_ID": "816745990",
+            "Assignment_1": "-",
+            "Assignment_2": "-",
+            "Assignment_3": "-",
+            "Assignment_4": "-",
+            "Assignment_5": "-"    
+        },
+        {
+            "Student_Name": "Ace Daly",
+            "Student_ID": "290298009",
+            "Assignment_1": "-",
+            "Assignment_2": "-",
+            "Assignment_3": "-",
+            "Assignment_4": "-",
+            "Assignment_5": "-"    
+        }
+     
+    ];
+
+    buildStudentTable(students)
+    //*use a function to generate the data, each row use a static form*//
+    //reference: https://codepen.io/thireven/pen/NBamNV
+    //each td using the onkeyup = "findAvg()" means that each time the user 
+    //enter the score, it will automatically calculate the average score of the submitted assignment
+    //That's why each cell needs to assign to the findAvg() function
+    function buildStudentTable(data) {
+        var table = document.getElementById('table');
+        for(var i=0; i<data.length;i++){
+        let tr = table.insertRow(-1);
+           var row =  `<tr>
+            <td align="left">${data[i].Student_Name}</td>
+            <td align="left">${data[i].Student_ID}</td>
+            <td class="assignments" align="center" contenteditable="true" onkeyup="findAvg()" onfocus="this.textContent=''">${data[i].Assignment_1}</td>
+            <td class="assignments" align="center" contenteditable="true" onkeyup="findAvg()" onfocus="this.textContent=''">${data[i].Assignment_2}</td>
+            <td class="assignments" align="center" contenteditable="true" onkeyup="findAvg()" onfocus="this.textContent=''">${data[i].Assignment_3}</td>
+            <td class="assignments" align="center" contenteditable="true" onkeyup="findAvg()" onfocus="this.textContent=''">${data[i].Assignment_4}</td>
+            <td class="assignments" align="center" contenteditable="true" onkeyup="findAvg()" onfocus="this.textContent=''">${data[i].Assignment_5}</td>
+            <td class="finalmark" align="right"></td>
+                </tr>`;
+                tr.innerHTML = row
+        }
+    }
+
+    function resettable(){
+    var tab = document.getElementById('table');
+     tab.innerHTML = buildStudentTable(students);
+}
+
+    
+    
+    </script>
+</body>
+</html> 
